@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/page/',
   title: 'AllenBblog', 
   // description: 'AllenBlog',
   head: [
