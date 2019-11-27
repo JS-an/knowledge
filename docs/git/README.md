@@ -48,18 +48,17 @@ git commit -m 'deploy'
 cd -
 ```
 
-## 第二
+## git 提示 error setting certificate verify locations
 
-1. 1212
-2. 1212
-3. 1212
-4. 1212
-5. 1212
-6. 1212
-7. 1212
-8. 1212
-9. 1212
-10. 1212
+- 修改正确路径
+```bash
+git config --system http.sslcainfo "C:\Program Files (x86)\git\bin\curl-ca-bundle.crt"
+```
+或
+- 忽略SSL验证
+```bash
+git config --system http.sslverify false
+```
 
 ## 第三
 
