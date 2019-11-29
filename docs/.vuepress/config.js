@@ -25,6 +25,13 @@ module.exports = {
         ]
       },
       {
+        text: '网络基础',
+        items: [
+          { text: 'HTTP', link: '/http/' },
+          // { text: 'WebSocket', link: '/WebSocket/' },
+        ]
+      },
+      {
         text: '后端',
         items: [
           { text: 'node', link: '/node/' },
@@ -60,6 +67,9 @@ module.exports = {
       ],
       '/wx/': [
         ['', '小程序'],
+      ],
+      '/http/': [
+        ['', 'http'],
       ],
       '/node/': [
         ['', 'node'],
