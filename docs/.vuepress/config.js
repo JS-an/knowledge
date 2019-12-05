@@ -46,6 +46,7 @@ module.exports = {
         ]
       },
     ],
+    sidebarDepth: 2,
     sidebar: {
       '/html/': [
         ['', 'HTML/HTML5'],

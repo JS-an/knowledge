@@ -1,3 +1,6 @@
+## Git命令官网
+
+- [文档地址](https://www.git-scm.com/book/zh/v2)
 
 ## GitHub部署VuePress
 > [引用VuePress官网](https://vuepress.vuejs.org/zh/guide/deploy.html)
@@ -48,8 +51,8 @@ git commit -m 'deploy'
 cd -
 ```
 
-## git 提示 error setting certificate verify locations
-
+## Git报错
+### setting certificate verify locations
 - 修改正确路径
 ```bash
 git config --system http.sslcainfo "C:\Program Files (x86)\git\bin\curl-ca-bundle.crt"
@@ -59,29 +62,3 @@ git config --system http.sslcainfo "C:\Program Files (x86)\git\bin\curl-ca-bundl
 ```bash
 git config --system http.sslverify false
 ```
-
-## 第三
-
-1. 1212
-2. 1212
-3. 1212
-4. 1212
-5. 1212
-6. 1212
-7. 1212
-8. 1212
-9. 1212
-10. 1212
-
-## 第四
-
-1. 1212
-2. 1212
-3. 1212
-4. 1212
-5. 1212
-6. 1212
-7. 1212
-8. 1212
-9. 1212
-10. 1212
