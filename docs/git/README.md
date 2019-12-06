@@ -118,3 +118,32 @@ git config user.email "邮箱"
 git remote rm origin
 git remote add origin git@user.github.com:用户名/仓库名.git
 ```
+
+## Git提交时不需要密码
+
+- 情况一
+1. 用SSH克隆(clone)下来的配置好无密码公钥则不需输入密码  
+2. 命令行工具输入`ssh-keygen -t rsa -C "邮箱地址"`  
+3. 
+```sh
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/schacon/.ssh/id_rsa):（公钥文件名称）
+Created directory '/home/schacon/.ssh'.
+Enter passphrase (empty for no passphrase):(不需密码则回车留空)
+Enter same passphrase again:（如上）
+Your identification has been saved in /home/schacon/.ssh/id_rsa.
+Your public key has been saved in /home/schacon/.ssh/id_rsa.pub.
+The key fingerprint is:
+d0:82:24:8e:d7:f1:bb:9b:33:53:96:93:49:da:9b:e3 schacon@mylaptop.local
+```
+
+- 情况二
+1. 用HTTPS克隆(clone)下来的需输入密码，但是可以缓存密码，自动输入
+2. 设置`credential helper`  
+凭据可以设置为全局，也可以设置当前项目下起作用。  
+如果设置全局，则：  
+`git config –global credential.helper store –file=git_credentails.`
+如果设置当前项目，则进入项目代码目录下，运行：  
+`git config credential.helper store –file=.git_credentails.`
+上面的–file=.git-credentials表示用户名密码存储的文件位置。  
