@@ -18,3 +18,6 @@ let url = `http://test?name=${encodeURIComponent(name)}`
 ```js
 http://test?name=a+b
 ```
+
+## cookie与CORS（跨源资源共享）
+> [https://juejin.im/post/5ca5bcb851882543c6670ed4#heading-4](https://juejin.im/post/5ca5bcb851882543c6670ed4#heading-4)
