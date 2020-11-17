@@ -37,14 +37,15 @@ npm i @vue/cli@版本号
 二、背景图的引用
 背景图样式直接写在element的style属性里
 直接在html模板里，在dom对象的style里加背景图，不起效果，代码如下：
-
+```html
 <div style="height:100px; background:url('../../assets/img/bg.png') center top no-repeat">
  不起效果。。。
 </div>
+```
 背景样式class写在vue文件的style标签里
 写法：
 background: url('图片相对当前的路径') center top no-repeat
-
+```html
 <el-card class="box-card sudoku_item">
   <div slot="header" class="clearfix">
     <span>背景图写在css里</span>
@@ -59,12 +60,14 @@ background: url('图片相对当前的路径') center top no-repeat
     background: url('../../assets/img/bg.png') center top no-repeat
   }
 </style>
+```
 编译后的css：
-
+```css
 .testBackground[data-v-eb2b930e] {
     height: 100px;
     background: url(../img/bg.187d48cd.png) top no-repeat;
 }
+```
 背景样式class写在样式文件里，在vue文件里引入样式文件
 样式写法：
 
@@ -72,7 +75,7 @@ background: url('图片相对当前vue文件的路径') center top no-repeat
 这个图片路径很重要，url是图片相对于当前vue文件的路径，而不是图片相对于样式文件的路径。
 
 html写法， /views/static_test/test1.vue:
-
+```html
   <el-card class="box-card sudoku_item">
     <div slot="header" class="clearfix">
       <span>背景图写在style file里</span>
@@ -81,7 +84,8 @@ html写法， /views/static_test/test1.vue:
       起效果。。。
     </div>
   </el-card>
-样式写法， /style/test1.scss：
+```
+<!-- 样式写法， `/style/test1.scss：`
 
   .testBackground_file {
     height: 100px;
@@ -302,4 +306,4 @@ publicPath: process.env.NODE_ENV === 'production' ? '/vue-demo' : '/',
     <script src=/vue-demo/js/chunk-vendors.9e634535.js></script>
     <script src=/vue-demo/js/app.1da8b7e5.js></script>
   </body>  
-</html>
+</html> -->
