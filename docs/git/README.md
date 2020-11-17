@@ -147,3 +147,23 @@ d0:82:24:8e:d7:f1:bb:9b:33:53:96:93:49:da:9b:e3 schacon@mylaptop.local
 如果设置当前项目，则进入项目代码目录下，运行：  
 `git config credential.helper store –file=.git_credentails.`
 上面的–file=.git-credentials表示用户名密码存储的文件位置。  
+
+
+- 情况三
+1. 在本地git库目录终端下，输入以下代码，输出所匹配的远程库。
+```sh
+git remote -v
+```
+如果使用的是https替换为ssh方式即可
+```sh
+git remote set-url origin git@github.com:name/repo
+```
+2. 在目标终端下，按照如下命令行重新添加私钥
+```sh
+ssh-add ~/.ssh/id_rsa
+```
+在执行`ssh-add ~/.ssh/id_rsa`时发生Could not open a connection to your authentication agent错误，
+执行如下命令`ssh-agent bash`
+然后再执行`ssh-add ~/.ssh/id_rsa`即可
+
+3. 添加成功后，重新尝试是否可以push和pull
