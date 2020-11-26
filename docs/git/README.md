@@ -162,6 +162,7 @@ git remote set-url origin git@github.com:name/repo
 ```sh
 ssh-add ~/.ssh/id_rsa
 ```
+> ~/.ssh/id_rsa 为bash路径下的.ssh文件夹中的id_rsa文件（id_rsa具体为密钥文件名，需用哪个密钥就改为哪个）
 在执行`ssh-add ~/.ssh/id_rsa`时发生Could not open a connection to your authentication agent错误，
 执行如下命令`ssh-agent bash`
 然后再执行`ssh-add ~/.ssh/id_rsa`即可
