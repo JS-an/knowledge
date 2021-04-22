@@ -1,4 +1,4 @@
-# pm2
+## pm2
 
 1. 安装 pm2
    ` npm install pm2 -g //全局安装`
