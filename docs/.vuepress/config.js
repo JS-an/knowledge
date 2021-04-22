@@ -22,6 +22,7 @@ module.exports = {
           { text: 'React', link: '/react/' },
           { text: 'Flutter', link: '/flutter/' },
           { text: '小程序', link: '/wx/' },
+          { text: 'UI框架', link: '/ui/' },
         ]
       },
       {
@@ -68,6 +69,9 @@ module.exports = {
       ],
       '/wx/': [
         ['', '小程序'],
+      ],
+      '/ui/': [
+        ['', 'UI框架'],
       ],
       '/http/': [
         ['', 'http'],
