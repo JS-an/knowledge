@@ -1,6 +1,6 @@
 module.exports = {
   base: '/page/',
-  title: 'AllenBblog', 
+  title: 'AllenBblog',
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }],
   ],
@@ -57,7 +57,10 @@ module.exports = {
         ['', 'CSS/CSS3'],
       ],
       '/js/': [
-        ['', 'JS/ES/TS'],
+        ['', 'JS/ES'],
+      ],
+      '/ts/': [
+        ['', 'TypeScript'],
       ],
       '/vue/': [
         ['', 'Vue'],
