@@ -12,7 +12,8 @@ module.exports = {
         items: [
           { text: 'HTML/HTML5', link: '/html/' },
           { text: 'CSS/CSS3', link: '/css/' },
-          { text: 'JS/ES/TS', link: '/js/' },
+          { text: 'JS/ES', link: '/js/' },
+          { text: 'TypeScript', link: '/ts/' },
         ]
       },
       {
