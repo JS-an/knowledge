@@ -1,4 +1,4 @@
-##理解 Typescript 配置文件
+## 理解 Typescript 配置文件
 
 TS 使用 tsconfig.json 作为其配置文件，它主要包含两块内容：
 
@@ -7,7 +7,7 @@ TS 使用 tsconfig.json 作为其配置文件，它主要包含两块内容：
 
 > 另外，一般来说，tsconfig.json 文件所处的路径就是当前 TS 项目的根路径。
 
-###基本用法
+### 基本用法
 TS 的编译命令为 tsc ，当我们在命令行中直接输入 tsc 时，会打印出如下的使用说明：
 ```shell
 $ tsc
@@ -37,7 +37,7 @@ tsc --outFile file.js --target es3 --module commonjs file.ts
 
 >注意，tsc 的命令行选项具有优先级，会覆盖 tsconfig.json 中的同名选项。
 
-###使用示例
+### 使用示例
 下面是一个简单的配置示例：
 ```json
 {
@@ -83,8 +83,8 @@ tsc --outFile file.js --target es3 --module commonjs file.ts
 
 > 开发者可以按照自己的喜好使用其中任意一种。但它们不是互斥的，在某些情况下两者搭配起来使用效果更佳。
 
-###配置说明
-####文件指定
+### 配置说明
+#### 文件指定
 - files 属性是一个数组，数组元素可以是相对文件路径和绝对文件路径。
 
 - include 和 exclude 属性也是一个数组，但数组元素是类似 glob 的文件模式。它支持的 glob 通配符包括：
@@ -113,8 +113,8 @@ tsc --outFile file.js --target es3 --module commonjs file.ts
 
 - tsconfig.json 也可以为空文件，这种情况下会使用默认的编译选项来编译所有默认引入的文件。
 
-####编译选项
-#####常用选项
+#### 编译选项
+##### 常用选项
 |选项字段|类型|默认值|说明|
 |----|----|----|----|
 |allowJs|boolean|false|允许编译 JS 文件|
@@ -134,7 +134,7 @@ tsc --outFile file.js --target es3 --module commonjs file.ts
 |sourceMap|boolean|false|生成 .map 文件|
 |target|string|es3|生成 .js 文件版本|
 附：[官方完整的编译选项列表](https://www.typescriptlang.org/docs/handbook/compiler-options.html)
-####类型相关
+#### 类型相关
 - 类型相关的选项包括 typeRoots 和 types 。
 
 有一个普遍的误解，以为这两个选项适用于所有的类型声明文件，包括用户自定义的声明文件。其实不然。
@@ -186,7 +186,7 @@ declare global {
 ```
 这样的话，就可以在任何地方直接使用 graphql 和 Gatsby 对应的类型了。
 
-####配置复用
+#### 配置复用
 可以使用 extends 来实现配置复用，即一个配置文件可以继承另一个文件的配置属性。
 
 比如，建立一个基础的配置文件 configs/base.json ：
