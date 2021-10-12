@@ -45,6 +45,7 @@ module.exports = {
         text: '前端工具',
         items: [
           { text: 'git', link: '/git/' },
+          { text: 'npm', link: '/npm/' },
         ]
       },
     ],
@@ -91,6 +92,9 @@ module.exports = {
       ],
       '/git/': [
         ['', 'git'],
+      ],
+      '/npm/': [
+        ['', 'npm'],
       ],
       // fallback
       '/': [
