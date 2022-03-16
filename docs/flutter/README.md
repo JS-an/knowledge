@@ -26,6 +26,8 @@
 ### 页面缓存（keeplive）
 >> 必须实现以下注释
 ```dart
+// 该 MePage 组件必须用特定控件包裹，例如：PageView，TabBarView
+
 // 1.必须是 StatefulWidget 组件
 class MePage extends StatefulWidget {
   const MePage({Key? key}) : super(key: key);

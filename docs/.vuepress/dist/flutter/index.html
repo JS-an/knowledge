@@ -8,7 +8,7 @@
     <link rel="icon" href="/page/logo.png">
     <meta name="description" content="">
     
-    <link rel="preload" href="/page/assets/css/0.styles.08b46613.css" as="style"><link rel="preload" href="/page/assets/js/app.ade55654.js" as="script"><link rel="preload" href="/page/assets/js/2.2d8afebf.js" as="script"><link rel="preload" href="/page/assets/js/10.5d3f2fa1.js" as="script"><link rel="prefetch" href="/page/assets/js/11.b71c01af.js"><link rel="prefetch" href="/page/assets/js/12.a08b53db.js"><link rel="prefetch" href="/page/assets/js/13.b4aba9b1.js"><link rel="prefetch" href="/page/assets/js/14.2735e2da.js"><link rel="prefetch" href="/page/assets/js/15.b441c226.js"><link rel="prefetch" href="/page/assets/js/16.feb274a9.js"><link rel="prefetch" href="/page/assets/js/17.df7433f1.js"><link rel="prefetch" href="/page/assets/js/18.5faff322.js"><link rel="prefetch" href="/page/assets/js/19.561ee73d.js"><link rel="prefetch" href="/page/assets/js/20.191ae040.js"><link rel="prefetch" href="/page/assets/js/21.8e1d7fda.js"><link rel="prefetch" href="/page/assets/js/22.f2bdd8e0.js"><link rel="prefetch" href="/page/assets/js/3.927d2cc3.js"><link rel="prefetch" href="/page/assets/js/4.8015288e.js"><link rel="prefetch" href="/page/assets/js/5.c44f34e2.js"><link rel="prefetch" href="/page/assets/js/6.9e620c84.js"><link rel="prefetch" href="/page/assets/js/7.14b9824c.js"><link rel="prefetch" href="/page/assets/js/8.e7d5bfcd.js"><link rel="prefetch" href="/page/assets/js/9.3aff51a9.js">
+    <link rel="preload" href="/page/assets/css/0.styles.08b46613.css" as="style"><link rel="preload" href="/page/assets/js/app.829f8f2c.js" as="script"><link rel="preload" href="/page/assets/js/2.2d8afebf.js" as="script"><link rel="preload" href="/page/assets/js/10.bd70b9e8.js" as="script"><link rel="prefetch" href="/page/assets/js/11.8d628815.js"><link rel="prefetch" href="/page/assets/js/12.998c5743.js"><link rel="prefetch" href="/page/assets/js/13.224a35f2.js"><link rel="prefetch" href="/page/assets/js/14.2735e2da.js"><link rel="prefetch" href="/page/assets/js/15.f06e121c.js"><link rel="prefetch" href="/page/assets/js/16.23a705dd.js"><link rel="prefetch" href="/page/assets/js/17.9127e828.js"><link rel="prefetch" href="/page/assets/js/18.1b2aefde.js"><link rel="prefetch" href="/page/assets/js/19.366ad9a6.js"><link rel="prefetch" href="/page/assets/js/20.231e506e.js"><link rel="prefetch" href="/page/assets/js/21.b02243a7.js"><link rel="prefetch" href="/page/assets/js/22.f2bdd8e0.js"><link rel="prefetch" href="/page/assets/js/3.927d2cc3.js"><link rel="prefetch" href="/page/assets/js/4.8015288e.js"><link rel="prefetch" href="/page/assets/js/5.c44f34e2.js"><link rel="prefetch" href="/page/assets/js/6.ca62f060.js"><link rel="prefetch" href="/page/assets/js/7.14b9824c.js"><link rel="prefetch" href="/page/assets/js/8.e7d5bfcd.js"><link rel="prefetch" href="/page/assets/js/9.e116b3bd.js">
     <link rel="stylesheet" href="/page/assets/css/0.styles.08b46613.css">
   </head>
   <body>
@@ -76,7 +76,9 @@
 <blockquote><blockquote><p>我使用的是 I10n（带有大写字母 I）而不是 l10n（带有小写字母 l）。它发生在我得知 l10n 代表本地化时。
 所以我将 I10n.yaml 和 I10n 文件夹的名称从大写的“i”更改为小写的“L”，然后代码生成器就可以工作了。我觉得自己好傻 xD
 我还想指出，我现在什至不需要在任何地方进行导入，只需添加对 pubspec.yaml 的依赖和 'generate: true' 标志，并定义 l10n.yaml 和 l10n 文件夹，足以让代码生成器正常工作。
-谢谢您的帮助。我只是希望有一个注释可以帮助解决这个问题，因为现在到处都是，大写 I 的写法与小写 L 完全相同。</p></blockquote></blockquote></li></ol> <h3 id="页面缓存-keeplive"><a href="#页面缓存-keeplive" class="header-anchor">#</a> 页面缓存（keeplive）</h3> <blockquote><blockquote><p>必须实现以下注释</p></blockquote></blockquote> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token comment">// 1.必须是 StatefulWidget 组件</span>
+谢谢您的帮助。我只是希望有一个注释可以帮助解决这个问题，因为现在到处都是，大写 I 的写法与小写 L 完全相同。</p></blockquote></blockquote></li></ol> <h3 id="页面缓存-keeplive"><a href="#页面缓存-keeplive" class="header-anchor">#</a> 页面缓存（keeplive）</h3> <blockquote><blockquote><p>必须实现以下注释</p></blockquote></blockquote> <div class="language-dart extra-class"><pre class="language-dart"><code><span class="token comment">// 该 MePage 组件必须用特定控件包裹，例如：PageView，TabBarView</span>
+
+<span class="token comment">// 1.必须是 StatefulWidget 组件</span>
 <span class="token keyword">class</span> <span class="token class-name">MePage</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> <span class="token function">MePage</span><span class="token punctuation">(</span><span class="token punctuation">{</span>Key<span class="token operator">?</span> key<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -95,6 +97,6 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
-    <script src="/page/assets/js/app.ade55654.js" defer></script><script src="/page/assets/js/2.2d8afebf.js" defer></script><script src="/page/assets/js/10.5d3f2fa1.js" defer></script>
+    <script src="/page/assets/js/app.829f8f2c.js" defer></script><script src="/page/assets/js/2.2d8afebf.js" defer></script><script src="/page/assets/js/10.bd70b9e8.js" defer></script>
   </body>
 </html>
