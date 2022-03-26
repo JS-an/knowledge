@@ -23,4 +23,8 @@ git commit -m 'deploy'
 # git push -f https://github.com/JS-an/page.git master:gh-pages
 git push -f git@github.com:JS-an/page.git master:gh-pages
 
+echo 按任意键继续
+read -n 1
+echo 继续运行
+
 cd -
