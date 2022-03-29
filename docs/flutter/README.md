@@ -103,7 +103,7 @@ class _MePageState extends State<MePage> with AutomaticKeepAliveClientMixin{
 
 #### 谷歌登录
 
-** Android **
+**Android**
 
 1. 前往[Firebase](https://console.firebase.google.com/)创建项目
 2. 侧边栏进入 build -> Authentication -> Sign-in method，开启 Google 项
@@ -125,12 +125,16 @@ keytool -list -v -keystore "C:\Users\Admin\.android\debug.keystore"
 9. 配置 android/app/build.gradle(注意 app 下的会有 JAVA 和 kotlin 代码可以复制)
 10. 编写代码(下为示例)
 
+```yaml
+dependencies:
+  firebase_auth: ^3.3.11 # Firebase 验证
+    google_sign_in: ^5.2.4 # 谷歌登录
+```
+
 ```dart
 import 'package:flutter/material.dart';
-// import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 
 class AllAuth {
   static final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -161,15 +165,124 @@ class AllAuth {
       // print(idTokenResult.token);
     } catch (e) {
       print(e.toString());
-      Fluttertoast.showToast(
-          msg: "Auth error",
-          backgroundColor: Colors.grey,
-          toastLength: Toast.LENGTH_SHORT,
-          fontSize: 14);
     }
   }
 }
 
 ```
 
-- IOS
+**IOS**
+
+### Flutter 分析功能
+
+#### 接入 Firebase Analytics
+
+**安卓接入**
+
+- 在 Firebase 项目中下载 google-services.json 到 android/app/google-services.json
+
+- android/build.gradle 增加:
+
+```gradle
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.google.gms:google-services:4.3.10'
+    }
+}
+```
+
+- android/app/build.gradle 增加:
+
+```gradle
+apply plugin: 'com.google.gms.google-services' //谷歌统计
+```
+
+```yaml
+dependencies:
+  firebase_core: ^1.13.1 # 一个 Flutter 插件用来使用 Firebase Core API，从而可以连接到多个 Firebase 应用
+  firebase_analytics: ^9.1.2 # 用于收集应用用户信息、分析用户行为
+```
+
+**IOS 接入**
+
+- 下载 GoogleService-Info.plist 到 ios/Runner/GoogleService-Info.plist
+
+**编写代码**
+
+```dart
+// main.dart
+import 'package:flutter/material.dart';
+import 'package:cheerfun_flutter/utils/firebase_analytics.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  MyApp({Key? key}) : super(key: key);
+
+  await Analytics().init();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      navigatorObservers: [
+        Analytics().firebaseAnalyticsObserver, //加入路由统计
+      ],
+    );
+  }
+}
+
+```
+
+```dart
+// firebase_analytics.dart
+import 'package:firebase_analytics/firebase_analytics.dart';
+
+class Analytics {
+  Analytics._internal();
+
+  static final Analytics _instance = Analytics._internal();
+
+  factory Analytics() {
+    return _instance;
+  }
+
+  late FirebaseAnalytics analytics;
+  late FirebaseAnalyticsObserver firebaseAnalyticsObserver;
+
+  Future<void> init() async {
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp();
+    analytics = FirebaseAnalytics.instance;
+    firebaseAnalyticsObserver = FirebaseAnalyticsObserver(analytics: analytics);
+  }
+
+  // 以下函数可在需要的地方调用
+  // 可以自定义事件类型甚至传递某些有意义的参数
+  Future<void> sendAnalyticsEvent() async {
+    await analytics.logEvent(
+      name: 'test_event',
+      parameters: <String, dynamic>{
+        'string': 'string',
+        'int': 42,
+        'long': 12345678910,
+        'double': 42.0,
+        'bool': true,
+      },
+    );
+  }
+
+  // 获取对应用户ID
+  Future<void> sendSetUserId() async {
+    await analytics.setUserId(id: "admin");
+  }
+
+  // 可以获取当前视图 并发送
+  Future<void> sendSetCurrentScreen() async {
+    await analytics.setCurrentScreen(
+      screenName: 'store',
+      screenClassOverride: 'storeDemo',
+    );
+  }
+}
+```

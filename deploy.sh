@@ -20,8 +20,8 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f https://github.com/JS-an/page.git master:gh-pages
-git push -f git@github.com:JS-an/page.git master:gh-pages
+git push -f https://github.com/JS-an/page.git master:gh-pages
+# git push -f git@github.com:JS-an/page.git master:gh-pages
 
 echo 按任意键继续
 read -n 1
