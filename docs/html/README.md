@@ -23,3 +23,10 @@ Microsoft Edge 禁用了`autocomplete="off"`属性,可以用如下方法解决;
 <!-- 在 HTML 添加下面代码，会让图片进行预加载，请求时的 host 就会变成图片源地址 -->
 <meta name="referrer" content="never" />
 ```
+
+## HTML 提示：使用小写属性
+
+> 属性和属性值对大小写不敏感。(驼峰写法会影响传值,主流用连号写法,例: label-value)
+
+1. Vue和React等框架能用驼峰写法是因为构建工具进行了编译转化
+2. 如无构建工具时,写HTML传值还是需要传统写法
