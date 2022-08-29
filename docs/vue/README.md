@@ -1,3 +1,9 @@
+## Vue3
+> 暂无
+
+## 传递 prop 的细节
+[文档解释](https://cn.vuejs.org/guide/components/props.html#prop-passing-details)
+
 ## 安装多版本Vue-Cli
 
 1. 已安装一个全局版本直接下一步
