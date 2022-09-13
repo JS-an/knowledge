@@ -48,6 +48,12 @@ module.exports = {
           { text: 'npm', link: '/npm/' },
         ]
       },
+      {
+        text: '其他',
+        items: [
+          { text: 'IDE', link: '/ide/' },
+        ]
+      },
     ],
     sidebarDepth: 2,
     sidebar: {
@@ -95,6 +101,9 @@ module.exports = {
       ],
       '/npm/': [
         ['', 'npm'],
+      ],
+      '/ide/': [
+        ['', 'ide'],
       ],
       // fallback
       '/': [
